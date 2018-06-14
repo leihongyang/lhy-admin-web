@@ -1,2 +1,2 @@
-# lhy-admin-web
-spring + springMVC + mybatis + maven 最基本的服务器开发配置模板，+ sql日志输出调试配置
+#AngularSpringmvcMybatis
+原文链接：https://blog.csdn.net/LZGS_4/article/details/46678277

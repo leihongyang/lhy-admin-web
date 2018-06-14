@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhy.ssm.mapper.UserDao">
+
+	<resultMap type="com.lhy.ssm.entity.User" id="UserResult">
+		<result property="userId" column="userId"/>
+		<result property="userName" column="userName"/>
+		<result property="password" column="password"/>
+	</resultMap>
+	
+	<select id="login" parameterType="com.lhy.ssm.entity.User" resultMap="UserResult">
+		select * from t_user where userName=#{userName} and password=#{password}
+	</select>
+	
+	<select id="getUserById" parameterType="java.lang.Integer" resultMap="UserResult">
+		select * from t_user where userId=#{id}
+	</select>
+	
+	<select id="getAllUsers" resultMap="UserResult">
+		select * from t_user
+	</select>
+	
+	<insert id="addUser" parameterType="java.lang.String">
+		insert into t_user (userName) values (#{userName});
+	</insert>
+	
+	<delete id="deleteUser" parameterType="java.lang.Integer">
+		delete from t_user where userId = #{userId}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_user
+	</delete>
+	
+
+</mapper> 
